@@ -117,7 +117,8 @@ end -- main_loop
 
 function pop(n)
   if n == nil or n == 1 then
-    return table.remove(stack)
+    assert(#stack > 0, "stack is empty")
+  return table.remove(stack)
   else
     local last    = pop(1)
     local res     = { pop(n-1) }
